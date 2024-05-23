@@ -14,6 +14,6 @@ class PostsController extends Controller
             ['id'=>4, 'title'=>'Flutter', 'posted_by'=>"Mahmoud", 'created_at' => "2023-09-10 09:00:00"],
             ['id'=>5, 'title'=>'Python', 'posted_by'=>"Ahmed", 'created_at' => "2024-02-10 09:00:00"],
         ];
-        return view("test", ['posts' => $allPosts]);
+        return view("posts.index", ['posts' => $allPosts]);
     }
 }

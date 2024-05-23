@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TestController extends Controller
+class PostsController extends Controller
 {
-    public function testAction(){
+    public function index(){
         $allPosts = [
             ['id'=>1, 'title'=>'PHP', 'posted_by'=>"Ahmed", 'created_at' => "2022-10-10 09:00:00"],
             ['id'=>2, 'title'=>'Javascript', 'posted_by'=>"Mohammed", 'created_at' => "2022-10-10 09:00:00"],

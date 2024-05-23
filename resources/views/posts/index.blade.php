@@ -49,9 +49,9 @@
                         <td>{{ $post['posted_by'] }}</td>
                         <td>{{ $post['created_at'] }}</td>
                         <td>
-                            <button type="button" class="btn btn-info">View</button>
-                            <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
+                            <a href="/posts/{{ $post['id'] }}" class="btn btn-info">View</a>
+                            <a href="#" class="btn btn-primary">Edit</a>
+                            <a href="#" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                 @endforeach

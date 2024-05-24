@@ -68,4 +68,8 @@ class PostsController extends Controller
 
         return to_route('posts.show', $postId);
     }
+
+    public function destroy($postId){
+        return to_route('posts.index');
+    }
 }

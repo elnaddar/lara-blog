@@ -12,8 +12,9 @@ class PostsController extends Controller
         return view("posts.index", ['posts' => $posts]);
     }
 
-    public function show($postId){
-        $post = Post::findOrFail($postId);
+    public function show(Post $post){
+        // replaced this using Route Binding. "If you forgot read about it in the docs."
+        // $post = Post::findOrFail($postId);
         return view('posts.show', ['post' => $post]);
     }
 
@@ -37,8 +38,7 @@ class PostsController extends Controller
         return to_route('posts.index');
     }
 
-    public function edit($postId){
-        $post = Post::findOrFail($postId);
+    public function edit(Post $post){
         return view("posts.edit", ['post' => $post]);
     }
 

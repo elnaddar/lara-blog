@@ -5,7 +5,7 @@
 @endsection
 @section('content')
     <div class="text-center">
-        <a href="{{route('posts.create')}}" class="btn btn-success">Create Post</a>
+        <a href="{{ route('posts.create') }}" class="btn btn-success">Create Post</a>
     </div>
     <table class="table mt-4">
         <thead>
@@ -26,7 +26,7 @@
                     <td>{{ $post['created_at'] }}</td>
                     <td>
                         <a href="{{ route('posts.show', $post['id']) }}" class="btn btn-info">View</a>
-                        <a href="#" class="btn btn-primary">Edit</a>
+                        <a href="{{ route('posts.edit', $post['id']) }}" class="btn btn-primary">Edit</a>
                         <a href="#" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>

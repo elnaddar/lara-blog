@@ -50,4 +50,13 @@ class PostsController extends Controller
         // redirect to index after that
         return to_route('posts.index');
     }
+
+    public function edit($postId){
+        if (array_key_exists($postId - 1, $this->allPosts)) {
+            $post = $this->allPosts[$postId - 1];
+            return view("posts.edit", ['post' => $post]);
+        } else {
+            abort(404, 'Post not found');
+        }
+    }
 }

@@ -34,4 +34,20 @@ class PostsController extends Controller
     public function create(){
         return view("posts.create");
     }
+
+    public function store(){
+        // to get the data object call `all()` method from `request()` object.
+        $data = request() -> all();
+
+        // to look on data
+        // return $data;
+
+        // or get every thing individual by getting the `name` property from `request()` object.
+        // $title = request() -> title;
+        // $description = request() -> description;
+        // $post_creator = request() -> post_creator;
+
+        // redirect to index after that
+        return to_route('posts.index');
+    }
 }

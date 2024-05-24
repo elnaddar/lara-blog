@@ -4,18 +4,19 @@
     Create a post
 @endsection
 @section('content')
-    <form>
+    <form method="POST" action="{{ route('posts.store') }}">
+        @csrf
         <div class="mb-3">
             <label for="formTitle" class="form-label">Title</label>
-            <input type="text" class="form-control" id="formTitle">
+            <input type="text" name="title" class="form-control" id="formTitle">
         </div>
         <div class="mb-3">
             <label for="formDescription" class="form-label">Description</label>
-            <textarea type="password" class="form-control" id="formDescription"></textarea>
+            <textarea name="description" class="form-control" id="formDescription"></textarea>
         </div>
         <div class="mb-3">
             <label for="formCreator" class="form-label">Post Creator</label>
-            <select id="formCreator" class="form-select" aria-label="Select Author">
+            <select name="post_creator" id="formCreator" class="form-select" aria-label="Select Author">
                 <option value="1">Ahmed</option>
                 <option value="2">Mohammed</option>
             </select>

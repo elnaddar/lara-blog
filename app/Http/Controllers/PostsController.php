@@ -59,4 +59,13 @@ class PostsController extends Controller
             abort(404, 'Post not found');
         }
     }
+
+    public function update($postId){
+        $data = request() -> all();
+
+        // to look on data
+        // return $data;
+
+        return to_route('posts.show', $postId);
+    }
 }

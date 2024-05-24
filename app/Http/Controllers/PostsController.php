@@ -30,4 +30,8 @@ class PostsController extends Controller
             abort(404, 'Post not found');
         }
     }
+
+    public function create(){
+        return view("posts.create");
+    }
 }

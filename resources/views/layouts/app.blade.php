@@ -25,6 +25,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{ route('posts.index') }}">All posts</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('posts.create') }}">create post</a>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -19,13 +19,13 @@ class PostsController extends Controller
     }
 
     public function create(){
-        return view("posts.create");
+        $users = \App\Models\User::all();
+        return view("posts.create", ['users'=>$users]);
     }
 
     public function store(){
         // to get the data object call `all()` method from `request()` object.
         $data = request() -> all();
-
         // to look on data
         // return $data;
 
@@ -34,6 +34,11 @@ class PostsController extends Controller
         // $description = request() -> description;
         // $post_creator = request() -> post_creator;
 
+        // save in the data base
+        Post::create([
+            'title' => $data['title'],
+            'description' => $data['description'],
+        ]);
         // redirect to index after that
         return to_route('posts.index');
     }

@@ -21,9 +21,9 @@
             @if ($post->user)
                 <h5 class="card-title">Author: {{ $post->user->name }}</h5>
                 <p class="card-text">Email: {{ $post->user->email }}</p>
-                <p class="card-text">Created At: {{ $post->created_at }}</p>
+                <p class="card-text">Created At: {{ $post->created_at->format('Y-m-d') }}</p>
                 @if ($post->updated_at)
-                    <p class="card-text">Last Update: {{ $post->updated_at }}</p>
+                    <p class="card-text">Last Update: {{ $post->updated_at->format('Y-m-d') }}</p>
                 @endif
             @else
                 <h5 class="card-title">No Author for this post</h5>

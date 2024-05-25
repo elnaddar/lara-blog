@@ -18,8 +18,17 @@
             Post Creator Info
         </div>
         <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            @if ($post->user)
+                <h5 class="card-title">Author: {{ $post->user->name }}</h5>
+                <p class="card-text">Email: {{ $post->user->email }}</p>
+                <p class="card-text">Created At: {{ $post->created_at }}</p>
+                @if ($post->updated_at)
+                    <p class="card-text">Last Update: {{ $post->updated_at }}</p>
+                @endif
+            @else
+                <h5 class="card-title">No Author for this post</h5>
+                <p class="card-text">We have no data for this post's author.</p>
+            @endif
         </div>
     </div>
 @endsection

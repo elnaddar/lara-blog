@@ -19,7 +19,8 @@
             <label for="formCreator" class="form-label">Post Creator</label>
             <select name="post_creator" id="formCreator" class="form-select" aria-label="Select Author">
                 @foreach ($users as $user)
-                    <option value="{{ $user['id'] }}">{{ $user->name }}</option>
+                    <option @selected($post['user_id'] == $user['id']) value="{{ $user['id'] }}">
+                        {{ $user->name }}</option>
                 @endforeach
             </select>
         </div>

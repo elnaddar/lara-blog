@@ -38,6 +38,7 @@ class PostsController extends Controller
         Post::create([
             'title' => $data['title'],
             'description' => $data['description'],
+            'user_id' => $data['post_creator']
         ]);
         // redirect to index after that
         return to_route('posts.index');
@@ -56,6 +57,7 @@ class PostsController extends Controller
         $post->update([
             'title' => $data['title'],
             'description' => $data['description'],
+            'user_id' => $data['post_creator']
         ]);
         return to_route('posts.show', $post->id);
     }

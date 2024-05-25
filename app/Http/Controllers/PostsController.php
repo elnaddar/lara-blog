@@ -24,6 +24,12 @@ class PostsController extends Controller
     }
 
     public function store(){
+        request() -> validate([
+            'title' => ['required', 'min:10'],
+            'description' => ['required', 'min:50'],
+            'post_creator' => ['required', 'exists:users,id']
+        ]);
+
         // to get the data object call `all()` method from `request()` object.
         $data = request() -> all();
         // to look on data

@@ -60,7 +60,8 @@ class PostsController extends Controller
         return to_route('posts.show', $post->id);
     }
 
-    public function destroy($postId){
+    public function destroy(Post $post){
+        $post->delete();
         return to_route('posts.index');
     }
 }

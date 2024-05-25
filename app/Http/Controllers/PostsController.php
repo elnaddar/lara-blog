@@ -44,16 +44,20 @@ class PostsController extends Controller
     }
 
     public function edit(Post $post){
-        return view("posts.edit", ['post' => $post]);
+        $users = \App\Models\User::all();
+        return view("posts.edit", ['post' => $post, 'users'=>$users]);
     }
 
-    public function update($postId){
+    public function update(Post $post){
         $data = request() -> all();
 
         // to look on data
         // return $data;
-
-        return to_route('posts.show', $postId);
+        $post->update([
+            'title' => $data['title'],
+            'description' => $data['description'],
+        ]);
+        return to_route('posts.show', $post->id);
     }
 
     public function destroy($postId){

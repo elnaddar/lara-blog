@@ -4,7 +4,7 @@
     Edit "{{ $post['title'] }}" post
 @endsection
 @section('content')
-    <form method="POST" action="{{route('posts.update', $post['id'])}}">
+    <form method="POST" action="{{ route('posts.update', $post['id']) }}">
         @csrf
         @method('PUT')
         <div class="mb-3">
@@ -18,8 +18,9 @@
         <div class="mb-3">
             <label for="formCreator" class="form-label">Post Creator</label>
             <select name="post_creator" id="formCreator" class="form-select" aria-label="Select Author">
-                <option value="1">Ahmed</option>
-                <option value="2">Mohammed</option>
+                @foreach ($users as $user)
+                    <option value="{{ $user['id'] }}">{{ $user->name }}</option>
+                @endforeach
             </select>
         </div>
 
